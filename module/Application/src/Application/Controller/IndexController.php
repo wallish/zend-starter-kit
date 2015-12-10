@@ -12,7 +12,6 @@ namespace Application\Controller;
 use Zend\Mvc\Controller\AbstractActionController;
 use Zend\View\Model\ViewModel;
 use Application\Document\User;
-//use Application\Repository\UserRepository;
 
 class IndexController extends AbstractActionController
 {
@@ -20,13 +19,14 @@ class IndexController extends AbstractActionController
     {
         $dm = $this->getServiceLocator()->get('doctrine.documentmanager.odm_default');
         $users = $dm->getRepository('Application\Document\User')->findUserById("5663846fce96b6e4b00041a8");
-        $repo = $dm->getRepository('Application\Document\User');
-        //die(print_r($repo));
-        //$users = $dm->getRepository('Application\Document\User')->find(new \MongoId("5663846fce96b6e4b00041a8"));
+        $users2 = $dm->getRepository('Application\Document\User')->count();
+
+        $pdo = $dm->getConnection()->isConnected();
+        dump($pdo);
         //$users = $repo->findAll();
         //$users = $repo->findUserById("5663846fce96b6e4b00041a8");
         $users = $dm->getRepository('Application\Document\User')->findAll();
-        dump($users);
+        dump($users, $users2);
         /*$user = new User();
         $user->setName("Gembul");
         $dm->persist($user);

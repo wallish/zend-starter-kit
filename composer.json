@@ -15,6 +15,7 @@
         "doctrine/data-fixtures": "^1.1",
         "zendframework/zend-developer-tools": "dev-master",
         "jhuet/zdt-logger-module": "dev-master",
-        "symfony/var-dumper": "^3.0"
+        "symfony/var-dumper": "^3.0",
+        "bjyoungblood/bjy-profiler": "^1.1"
     }
 }
