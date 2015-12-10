@@ -4,9 +4,9 @@ namespace Application\Document;
 use Doctrine\ODM\MongoDB\Mapping\Annotations as ODM;
 
 
-/**
- * @ODM\Document(repositoryClass="Application\Repository\UserRepository")
- */
+/** @ODM\Document(collection="user", repositoryClass="Application\Repository\UserRepository") */
+
+
 class User
 {
     /** @ODM\Id */

@@ -20,8 +20,12 @@ class IndexController extends AbstractActionController
     {
         $dm = $this->getServiceLocator()->get('doctrine.documentmanager.odm_default');
         $users = $dm->getRepository('Application\Document\User')->findUserById("5663846fce96b6e4b00041a8");
-        //$users = $dm->getRepository('Application\Document\User')->findAll();
-        //$users = $dm->getRepository('Application\Document\User')->findAllOrderedByName();
+        $repo = $dm->getRepository('Application\Document\User');
+        //die(print_r($repo));
+        //$users = $dm->getRepository('Application\Document\User')->find(new \MongoId("5663846fce96b6e4b00041a8"));
+        //$users = $repo->findAll();
+        //$users = $repo->findUserById("5663846fce96b6e4b00041a8");
+        $users = $dm->getRepository('Application\Document\User')->findAll();
         dump($users);
         /*$user = new User();
         $user->setName("Gembul");
